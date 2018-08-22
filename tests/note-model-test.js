@@ -1,9 +1,9 @@
-var describe = require("../myTestFramework/testFunctions").describe;
-var it = require("../myTestFramework/testFunctions").it;
-var expect = require("../myTestFramework/testFunctions").expect;
-var Note = require("../src/note-model").Note;
+// var describe = require("../myTestFramework/testFunctions").describe;
+// var it = require("../myTestFramework/testFunctions").it;
+// var expect = require("../myTestFramework/testFunctions").expect;
+// var Note = require("../src/note-model").Note;
 
-describe("Note", function () {
+constructorName("Note", function () {
 
   describe("Upon instantiation", function () {
     it("Sets this.text to the string passed", function () {

@@ -1,10 +1,10 @@
-var describe = require("../myTestFramework/testFunctions").describe;
-var it = require("../myTestFramework/testFunctions").it;
-var expect = require("../myTestFramework/testFunctions").expect;
-var Note = require("../src/note-model").Note;
-var NoteList = require("../src/note-list-model.js").NoteList;
+// var describe = require("../myTestFramework/testFunctions").describe;
+// var it = require("../myTestFramework/testFunctions").it;
+// var expect = require("../myTestFramework/testFunctions").expect;
+// var Note = require("../src/note-model").Note;
+// var NoteList = require("../src/note-list-model.js").NoteList;
 
-describe("NoteList", function () {
+constructorName("NoteList", function () {
 
   describe("Upon instantiation", function () {
     it("Sets this.notes to an empty array", function () {

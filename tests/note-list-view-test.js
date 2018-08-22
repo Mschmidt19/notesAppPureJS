@@ -1,10 +1,10 @@
-var describe = require("../myTestFramework/testFunctions").describe;
-var it = require("../myTestFramework/testFunctions").it;
-var expect = require("../myTestFramework/testFunctions").expect;
-var NoteList = require("../src/note-list-model.js").NoteList;
-var NoteListView = require("../src/note-list-view.js").NoteListView;
+// var describe = require("../myTestFramework/testFunctions").describe;
+// var it = require("../myTestFramework/testFunctions").it;
+// var expect = require("../myTestFramework/testFunctions").expect;
+// var NoteList = require("../src/note-list-model.js").NoteList;
+// var NoteListView = require("../src/note-list-view.js").NoteListView;
 
-describe("NoteListView", function () {
+constructorName("NoteListView", function () {
 
   describe("Upon instantiation", function () {
     it("Can accept a NoteList as an argument", function () {

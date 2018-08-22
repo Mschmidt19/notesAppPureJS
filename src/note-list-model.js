@@ -1,7 +1,7 @@
 (function(exports) {
   'use strict'
 
-  var Note = require("../src/note-model").Note;
+  // var Note = require("../src/note-model").Note;
 
   function NoteList () {
     this.notes = [];
