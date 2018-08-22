@@ -18,8 +18,7 @@ describe("NoteList", function () {
     it("Returns an array of all stored notes", function () {
       myNoteList = new NoteList;
       myNoteList.createNote("Hello");
-      var expected = [new Note("Hello")];
-      expect(myNoteList.allNotes()).toEqual(expected);
+      expect(myNoteList.allNotes().length).toBe(1);
     })
   })
 

@@ -49,7 +49,6 @@
   }
 
   function describe(message, callback) {
-    console.log("")
     console.log(underline, `${message}`);
     callback();
   }
@@ -58,27 +57,3 @@
   exports.it = it;
   exports.describe = describe;
 })(this);
-
-
-
-
-// describe("#rolls", function () {
-//   it("Says that 1 is equal to True", function () {
-//     expect(1).toEqual(true);
-//   });
-//   it("Throws an error if using toBe", function () {
-//     expect(1).toBe(true);
-//   });
-// });
-
-// describe("#toInclude", function () {
-//   it("passes if array includes argument passed", function () {
-//     expect(["dog", 1, true, -0.5]).toInclude("dog");
-//   })
-//   it("passes if array includes argument passed", function () {
-//     expect(["dog", 1, true, -0.5]).toInclude(true);
-//   })
-//   it("fails if array does not includes argument passed", function () {
-//     expect(["dog", 1, true, -0.5]).toInclude("og");
-//   })
-// })
