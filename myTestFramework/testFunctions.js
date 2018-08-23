@@ -104,7 +104,7 @@
 
   function it(message, callback) {
     // console.log(cyan, `${message}`);
-    console.log(`%c${message}`, 'color: #50a5ff');
+    console.log(message);
     try {
       callback();
       // console.log(green, 'Success');
@@ -123,7 +123,7 @@
 
   function constructorName(message, callback) {
     console.log("")
-    console.log(`%c${message}`, 'color: magenta');
+    console.log(`%c${message}`, 'color: #50a5ff');
     callback();
   }
 

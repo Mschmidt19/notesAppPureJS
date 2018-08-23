@@ -8,8 +8,13 @@
       return text;
     };
 
+    function type () {
+      return 'Note'
+    }
+
     return {
-      noteText
+      noteText,
+      type
     }
   }
 

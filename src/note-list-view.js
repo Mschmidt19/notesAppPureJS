@@ -7,11 +7,19 @@
     this.list = noteList;
   }
 
+  NoteListView.prototype.type = function () {
+    return 'NoteListView'
+  };
+
   NoteListView.prototype.noteListHTML = function () {
     // Should I refactor using array.join?
     var returnString = "<ul>"
     for (var i = 0; i < this.list.allNotes().length; i++) {
-      returnString += `<li><div>${this.list.allNotes()[i].noteText()}</div></li>`
+      if(this.list.allNotes()[i].noteText().length > 20) {
+        returnString += `<li><div id='note${i}'><a href='#notes/${i}'>${this.list.allNotes()[i].noteText().substring(0,20)}...</a></div></li>`
+      } else {
+        returnString += `<li><div id='note${i}'><a href='#notes/${i}'>${this.list.allNotes()[i].noteText()}</a></div></li>`
+      }
     }
     returnString += "</ul>"
     return returnString;

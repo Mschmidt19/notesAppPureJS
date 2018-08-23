@@ -3,9 +3,12 @@
 
   function NoteController (noteList) {
     this.noteList = noteList;
-    this.noteList.createNote("Favourite drink: seltzer");
     this.noteListView = new NoteListView(this.noteList);
     this.appDiv = document.getElementById('app');
+  }
+
+  NoteController.prototype.type = function () {
+    return 'NoteController'
   }
 
   NoteController.prototype.insertHTML = function () {

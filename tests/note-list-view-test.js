@@ -23,7 +23,7 @@ constructorName("NoteListView", function () {
       myNoteList = new NoteList;
       myNoteList.createNote("First note");
       myNoteListView = new NoteListView(myNoteList);
-      expectedString = "<ul><li><div>First note</div></li></ul>"
+      expectedString = "<ul><li><div id='note0'><a href='#notes/0'>First note</a></div></li></ul>"
       expect(myNoteListView.noteListHTML()).toBe(expectedString);
     })
     it("Functions correctly when list has multiple notes", function () {
@@ -32,7 +32,7 @@ constructorName("NoteListView", function () {
       myNoteList.createNote("Second note here");
       myNoteList.createNote("Third");
       myNoteListView = new NoteListView(myNoteList);
-      expectedString = "<ul><li><div>First note</div></li><li><div>Second note here</div></li><li><div>Third</div></li></ul>"
+      expectedString = "<ul><li><div id='note0'><a href='#notes/0'>First note</a></div></li><li><div id='note1'><a href='#notes/1'>Second note here</a></div></li><li><div id='note2'><a href='#notes/2'>Third</a></div></li></ul>"
       expect(myNoteListView.noteListHTML()).toBe(expectedString);
     })
     it("Functions correctly when list has no notes", function () {
@@ -40,6 +40,12 @@ constructorName("NoteListView", function () {
       expectedString = "<ul></ul>"
       expect(myNoteListView.noteListHTML()).toBe(expectedString);
     })
+    it("Only displays the first 20 characters of a long note", function () {
+      myNoteList = new NoteList;
+      myNoteList.createNote("This note has more than twenty characters")
+      myNoteListView = new NoteListView(myNoteList);
+      expectedString = "<ul><li><div id='note0'><a href='#notes/0'>This note has more t...</a></div></li></ul>"
+      expect(myNoteListView.noteListHTML()).toBe(expectedString)
+    })
   })
-
 })

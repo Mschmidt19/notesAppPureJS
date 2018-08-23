@@ -7,6 +7,10 @@
     this.notes = [];
   }
 
+  NoteList.prototype.type = function () {
+    return 'NoteList'
+  }
+
   NoteList.prototype.allNotes = function (text) {
     return this.notes;
   };
