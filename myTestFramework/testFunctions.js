@@ -30,23 +30,75 @@
       }
     }
 
-    // function toThrowError(message) {
-    //   try {
-    //     actual();
-    //     throw new Error(`Expected ${actual} to throw Error(${message}) but nothing was thrown`)
-    //   } catch(e) {
-    //     if(e.message !== message) {
-    //       throw new Error(`Expected Error.message to be ${message} but got ${e.message}`)
-    //     }
-    //   }
-    // }
+    function toThrowError(message) {
+      if (typeof actual != 'function') {
+        throw new Error (`${actual} is not a function, pass it as 'function() {code}'`)
+      }
+      try {
+        actual();
+        var nothingThrown = true;
+      } catch(e) {
+        if(e.message !== message) {
+          throw new Error(`Expected Error.message to be ${message} but got ${e.message}`)
+        }
+      }
+      if(nothingThrown === true) {
+        throw new Error(`Expected ${actual} to throw Error(${message}) but nothing was thrown`);
+      };
+    };
+
+    function not() {
+      function toEqual(expected) {
+        if (actual == expected) {
+          throw new Error(`Expected ${expected} not to equal ${actual}`)
+        }
+      }
+
+      function toBe(expected) {
+        if (actual === expected) {
+          throw new Error(`Expected ${expected} not to be ${actual}`)
+        }
+      }
+
+      function toInclude(expected) {
+        if(actual.includes(expected) === true) {
+          throw new Error(`Expected ${actual} not to include ${expected}`)
+        }
+      }
+
+      function toBeEmpty() {
+        if(actual.length === 0) {
+          throw new Error(`Expected ${actual} not to be empty but it is`)
+        }
+      }
+
+      function toThrowError() {
+        if (typeof actual != 'function') {
+          throw new Error (`${actual} is not a function, pass it as 'function() {code}'`)
+        }
+        try {
+          actual();
+        } catch(e) {
+          throw new Error(`Expected ${actual} not to throw error but got ${e.message}`)
+        }
+      }
+
+      return {
+        toEqual,
+        toBe,
+        toInclude,
+        toBeEmpty,
+        toThrowError,
+      }
+    }
 
     return {
       toEqual,
       toBe,
       toInclude,
       toBeEmpty,
-      // toThrowError,
+      toThrowError,
+      not
     }
   }
 

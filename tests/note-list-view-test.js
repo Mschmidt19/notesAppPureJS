@@ -10,7 +10,7 @@ constructorName("NoteListView", function () {
     it("Can accept a NoteList as an argument", function () {
       myNoteList = new NoteList;
       myNoteListView = new NoteListView(myNoteList);
-      expect(myNoteListView.list).toBe(myNoteList);
+      expect(myNoteListView.list).toEqual(myNoteList);
     })
     it("Defaults this.list to an empty NoteList if no argument passed", function () {
       myNoteListView = new NoteListView;

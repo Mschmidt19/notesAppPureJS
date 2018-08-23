@@ -2,12 +2,16 @@
   'use strict'
 
   function Note (text) {
-    this.text = text;
-  }
+    var text = text;
 
-  Note.prototype.noteText = function () {
-    return this.text;
-  };
+    function noteText () {
+      return text;
+    };
+
+    return {
+      noteText
+    }
+  }
 
   exports.Note = Note;
 })(this);
