@@ -5,11 +5,11 @@
     this.noteList = noteList;
     this.noteList.createNote("Favourite drink: seltzer");
     this.noteListView = new NoteListView(this.noteList);
+    this.appDiv = document.getElementById('app');
   }
 
   NoteController.prototype.insertHTML = function () {
-    var appDiv = document.getElementById('app');
-    appDiv.innerHTML = this.noteListView.noteListHTML();
+    this.appDiv.innerHTML = this.noteListView.noteListHTML();
   };
 
   exports.NoteController = NoteController;
